@@ -31,7 +31,6 @@ const controlRecipes = async function() {
         // 2) Rendering recipe
         recipeView.render(model.state.recipe);
     } catch (err) {
-        // recipeView.renderError(`${err} ❌❌❌`);
         recipeView.renderError();
         console.error(err);
     }
@@ -67,7 +66,6 @@ const controlServings = function(newServings) {
     model.updateServings(newServings);
 
     // Update the view
-    // recipeView.render(model.state.recipe);
     recipeView.update(model.state.recipe);
 };
 
@@ -118,11 +116,6 @@ const controlAddRecipe = async function(newRecipe) {
     }
 };
 
-const newFeature = function() {
-    console.log("Welcome to Forkify!");
-    console.log("Testing this!");
-};
-
 const init = function() {
     bookmarksView.addHandlerRender(controlBookmarks);
     recipeView.addHandlerRender(controlRecipes);
@@ -131,7 +124,6 @@ const init = function() {
     paginationView.addHandlerClick(controlPagination);
     recipeView.addHandlerAddBookmark(controlAddBookmark);
     addRecipeView.addHandlerUpload(controlAddRecipe);
-    newFeature();
 };
 
 init();
