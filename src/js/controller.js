@@ -124,6 +124,7 @@ const newFeature = function() {
 };
 
 const init = function() {
+    newFeature();
     bookmarksView.addHandlerRender(controlBookmarks);
     recipeView.addHandlerRender(controlRecipes);
     recipeView.addHandlerUpdateServings(controlServings);
@@ -131,7 +132,6 @@ const init = function() {
     paginationView.addHandlerClick(controlPagination);
     recipeView.addHandlerAddBookmark(controlAddBookmark);
     addRecipeView.addHandlerUpload(controlAddRecipe);
-    newFeature();
 };
 
 init();
